@@ -1,0 +1,14 @@
+import { useState, useEffect, useMemo } from "react";
+
+const CATEGORIES = ["Food", "Transport", "Housing", "Entertainment", "Health", "Shopping", "Income", "Other"];
+const CAT_COLORS = {
+  Food: "#F97316", Transport: "#3B82F6", Housing: "#8B5CF6",
+  Entertainment: "#EC4899", Health: "#10B981", Shopping: "#F59E0B",
+  Income: "#22C55E", Other: "#6B7280"
+};
+
+const formatCurrency = (n) => "$" + Math.abs(n).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+const initialTransactions = [
+  { id: 1, desc: "Paycheck", amount: 2500, category: "Income", date: "2026-06-01" },
+  { id: 2, desc: "Groceries", amount: -120, category: "Food", date: "2026-06-03"
